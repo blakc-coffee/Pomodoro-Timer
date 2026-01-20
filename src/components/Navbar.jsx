@@ -1,5 +1,4 @@
-// src/components/navbar.jsx
-import React from 'react';
+
 import { FiSettings } from 'react-icons/fi'; // You'll need to install react-icons
 import '../styles/navbar.css';
 

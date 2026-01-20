@@ -2,7 +2,7 @@
 
 
 :root {
-  font-family: "Nunito", sans-serif;
+  font-family: "Macondo", cursive;
   line-height: 1.5;
   font-weight: 400;
 
@@ -15,5 +15,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+button {
+  font-family: inherit; /* This makes it inherit from the parent */
+  font-size: 1rem;     /* Optional: Set a base size */
+  cursor: pointer;     /* Optional: Changes cursor to pointer on hover */
+}
 

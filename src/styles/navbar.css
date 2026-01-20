@@ -53,3 +53,56 @@
 .settings-button:hover svg {
   animation: spin 0.3s ease-out forwards;
 }
+
+.navbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Theme variables */
+:root {
+  --bg-color: #AD8B73;
+  --text-color: #FFFBE9;
+  --accent-color: #CEAB93;
+}
+
+[data-theme="dark"] {
+  --bg-color: #2C3E50;
+  --text-color: #ECF0F1;
+  --accent-color: #34495E;
+}
+
+/* Update your existing styles to use these variables */
+:root {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Update other elements to use theme variables */
+.start-pause {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
