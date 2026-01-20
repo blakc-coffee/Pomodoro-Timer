@@ -3,6 +3,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import 'react-circular-progressbar/dist/styles.css';
 import { FaRedo } from 'react-icons/fa';
 import { useTimer } from '../hooks/useTimer';
+import { useTheme } from '../context/ThemeContext';
 import "../styles/TimerDisplay.css";
 
 const TimerDisplay = () => {
@@ -22,6 +23,7 @@ const TimerDisplay = () => {
   };
   const { formatted: displayTime } = formatTime();
   const percentage = (timeLeft / (25 * 60)) * 100;
+  const { theme } = useTheme();
   return (
     <div className='timer-container'>
       <div className='timer-wrapper'><CircularProgressbar
@@ -32,9 +34,9 @@ const TimerDisplay = () => {
           strokeLinecap: 'butt',
           textSize: '16px',
           pathTransitionDuration: 0.5,
-          pathColor: '#fffbe9d4',
-          textColor: '#fffbe9d4',
-          trailColor: '#E3CAA5',
+          pathColor: theme.colors.secondary,
+          textColor: theme.colors.quaternary,
+          trailColor: theme.colors.tertiary,
         })} 
         /></div>
         <div className='buttons'>

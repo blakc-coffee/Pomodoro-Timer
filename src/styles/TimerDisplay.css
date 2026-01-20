@@ -30,14 +30,14 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #CEAB93;
-    color: #FFFBE9;
+    background-color: var(--tertiary);
+    color: var(--quaternary);
     font-size: 30px;
     font-weight: 500;
      transition: background-color 0.2s ease;
 }
 .start-pause:hover {
-    background-color: #E3CAA5; 
+    background-color: var(--secondary); 
 }
 .start-pause span {
     display: inline-block;
@@ -52,14 +52,14 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #CEAB93;
-  color: #FFFBE9;
+  background-color: var(--tertiary);
+  color: var(--quaternary);
   padding: 20px 5px;  
   transition: background-color 0.2s ease;
 }
 
 .reset:hover {
-  background-color: #E3CAA5; 
+  background-color: var(--secondary); 
 }
 
 

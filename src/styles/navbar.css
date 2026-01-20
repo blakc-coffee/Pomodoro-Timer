@@ -1,7 +1,7 @@
 /* src/styles/navbar.css */
 .navbar {
   width: 100%;
-  background-color: #CEAB93;
+   background-color: var(--secondary);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
   position: sticky;
@@ -22,7 +22,7 @@
 .navbar-logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #FFFBE9;
+  color: var(--quaternary);
   margin: 0;
 }
 
@@ -30,7 +30,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #FFFBE9;
+  color: var(--quaternary);
   padding: 0.5rem;
   border-radius: 50%;
   transition: all 0.2s ease;
@@ -40,11 +40,11 @@
 }
 
 .settings-button:hover {
-  background-color: #E3CAA5;
-  color: #FFFBE9;
+  background-color: var(--secondary);
+  color: var(--quaternary);
 }
 
-/* Optional: Add animation for the settings icon on hover */
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(60deg); }
@@ -62,47 +62,33 @@
 
 .theme-toggle {
   background: none;
+
   border: none;
-  color: inherit;
+  color: var(--quaternary);
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
+  margin-right: -390px;
   transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--secondary);
 }
 
 .theme-toggle svg {
   width: 20px;
   height: 20px;
 }
-
-/* Theme variables */
-:root {
-  --bg-color: #AD8B73;
-  --text-color: #FFFBE9;
-  --accent-color: #CEAB93;
+.theme-name {
+  font-size: 0.9rem;
+  text-transform: capitalize;
 }
-
-[data-theme="dark"] {
-  --bg-color: #2C3E50;
-  --text-color: #ECF0F1;
-  --accent-color: #34495E;
-}
-
-/* Update your existing styles to use these variables */
-:root {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-/* Update other elements to use theme variables */
-.start-pause {
-  background-color: var(--accent-color);
-  color: var(--text-color);
+.navbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

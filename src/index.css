@@ -1,23 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Buda:wght@300&family=Macondo&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-
 :root {
   font-family: "Macondo", cursive;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary: #AD8B73;
+  --secondary: #CEAB93;
+  --tertiary: #E3CAA5;
+  --quaternary: #FFFBE9;
+}
+[data-theme="blue"] {
+  --primary: #0F2854;
+  --secondary: #1C4D8D;
+  --tertiary: #4988C4;
+  --quaternary: #BDE8F5;
+}
+[data-theme="green"] {
+  --primary: #1A3636;
+  --secondary: #40534C;
+  --tertiary: #677D6A;
+  --quaternary: #D6BD98;
+}
+[data-theme="pink"] {
+  --primary: #FCF5EE;
+  --secondary: #FFC4C4;
+  --tertiary: #EE6983;
+  --quaternary: #850E35;
+}
+[data-theme="burgundy"] {
+  --primary: #662222;
+  --secondary: #842A3B;
+  --tertiary: #A3485A;
+  --quaternary: #F5DAA7;
+}
+ 
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #AD8B73;
+body {
+  margin: 0;
+  font-family: "Macondo", cursive;
+  background-color: var(--primary);
+  color: var(--quaternary);
+  transition: all 0.3s ease;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header {
+  background-color: var(--primary);
+  color: var(--quaternary);
+}
+
+.button {
+  background-color: var(--secondary);
+  color: var(--quaternary);
+}
+
+.accent {
+  color: var(--tertiary);
+}
+
+.highlight {
+  background-color: var(--quaternary);
+  color: var(--tertiary);
 }
 button {
-  font-family: inherit; /* This makes it inherit from the parent */
-  font-size: 1rem;     /* Optional: Set a base size */
-  cursor: pointer;     /* Optional: Changes cursor to pointer on hover */
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
