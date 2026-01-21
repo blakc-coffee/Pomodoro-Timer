@@ -16,8 +16,8 @@
 }
 @media (max-width: 480px) {
   #root {
-    padding: 0.5rem;
     max-width: 100%;
+    padding: 0.5rem;
   }
   .timer-wrapper {
     transform: scale(0.9);
