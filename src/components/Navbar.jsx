@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <h1 className="navbar-logo">Pomodoro</h1>
-        <div className="theme-dropdown">
+        <div className={`theme-dropdown ${isDropdownOpen ? 'active' : ''}`}>
           <button 
             className="theme-toggle" 
             onClick={toggleDropdown}
