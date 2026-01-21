@@ -24,23 +24,6 @@
   padding: 0 1rem;
   overflow: hidden;
 }
-
-.theme-dropdown {
-  position: relative;
-}
-.theme-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  margin-top: 0.5rem;
-  background: var(--quaternary);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  min-width: 200px;
-  padding: 0.5rem;
-}
-
 .navbar-logo {
   font-size: 1.5rem;
   font-weight: 600;
@@ -48,7 +31,6 @@
   color: var(--quaternary);
   margin: 0;
 }
-
 .settings-button {
   background: none;
   border: none;
@@ -98,6 +80,24 @@
  
   transition: all 0.3s ease;
 }
+.theme-dropdown {
+  position: relative;
+}
+.theme-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--quaternary);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 200px;
+  padding: 0.5rem;
+  transform: none !important;
+   box-sizing: border-box;
+}
+
 
 .theme-toggle:hover {
   background-color: var(--secondary);
@@ -220,6 +220,25 @@
   .navbar {
     padding: 0.5rem 0;
   }
+  .theme-dropdown {
+    position: static; 
+  }
+  .theme-dropdown-menu {
+    position: fixed; /* Changed from absolute to fixed */
+    top: auto;
+    bottom: 0;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+    padding: 1rem;
+    max-height: 60vh;
+    overflow-y: auto;
+    transform: translateY(100%);
+    animation: slideUp 0.3s ease forwards;
+  }
   .navbar-container {
     padding: 0 0.5rem;
     width: 100%;
@@ -230,8 +249,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
-  navbar-logo,
+  .navbar-logo,
   .theme-dropdown button,
   .settings-button {
     font-size: 0.9rem;
@@ -248,13 +266,7 @@
     min-height: 36px;  
     padding: 6px;      
   }
-  .theme-dropdown-menu {
-    width: 200px;
-    right: 0.5rem !important;
-    left: 0.5rem !important;
-    width: auto !important;
-    max-width: calc(100% - 1rem);
-  }
+ 
   .settings-button {
     padding: 0.5rem;
   }
@@ -262,5 +274,9 @@
   button {
     min-width: 44px;
     min-height: 44px;
+  }
+  .theme-option {
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
   }
 }
