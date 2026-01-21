@@ -226,7 +226,6 @@
   }
   .navbar-logo {
     font-size: 1.25rem;
-    max-width: 125px;
      white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
