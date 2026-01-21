@@ -1,22 +1,28 @@
-/* App.css */
 #root {
-  max-width: 600px;  /* Or your preferred maximum width */
-  margin: 0 auto;    /* Centers the content */
-  padding: 1rem;     /* Adds some padding around the edges */
-  min-height: 100vh; /* Ensures the content takes at least full viewport height */
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Optional: Add media query for smaller screens */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   #root {
-    padding: 0.5rem;
-    max-width: 100%;  /* Allow full width on very small screens */
+    padding: 0.75rem;
   }
 }
-/* Add this to your existing App.css */
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+  .timer-wrapper {
+    transform: scale(0.9);
+  }
+}
+
 .app {
   display: flex;
   flex-direction: column;
