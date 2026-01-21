@@ -1,12 +1,11 @@
 // src/App.js
 import React from 'react';
+import Navbar from './components/Navbar';
 import { ThemeProvider } from './context/ThemeContext';
 import { SettingsProvider } from './context/SettingsContext';
 import ModeSwitcher from './components/ModeSwitcher';
 import TimerDisplay from './components/TimerDisplay';
-import Navbar from './components/Navbar';
 import './App.css';
-
 function App() {
   return (
     <ThemeProvider>
@@ -19,6 +18,7 @@ function App() {
       </SettingsProvider>
     </ThemeProvider>
   );
+  
 }
 
 export default App; 
