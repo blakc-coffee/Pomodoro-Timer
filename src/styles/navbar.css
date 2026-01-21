@@ -14,7 +14,8 @@
 
 .navbar-container {
   max-width: 600px;
-  
+  justify-content: space-between; 
+  align-items: center;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -57,7 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
+  margin: 0;
 }
 
 .settings-button:hover {
@@ -80,14 +81,14 @@
   gap: 10px;
   align-items: center;
 }
-
+/*Theme Button*/
 .theme-toggle {
   background: none;
   margin-right: 5px;
   border: none;
   color: var(--quaternary);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 50%;
   display: flex;
   align-items: right;
@@ -120,6 +121,19 @@
   display: inline-block;
 }
 
+.theme-dropdown button {
+  background: none;
+  border: none;
+  color: var(--quaternary);
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;  
+  height: auto;            
+  line-height: 1.2;        
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .theme-dropdown-menu {
   position: absolute;
   top: 100%;
@@ -133,6 +147,7 @@
   margin-top: 0.5rem;
   border: 1px solid var(--secondary);
 }
+
 
 .theme-dropdown-header {
   display: flex;
@@ -198,7 +213,7 @@
 .theme-name {
   font-size: 0.9rem;
 }
-
+/*Mobile Media Changes*/
 @media (max-width: 480px) {
   .navbar {
     padding: 0.5rem 0;
@@ -219,6 +234,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
      margin-left: 4px; 
+     padding: 0.4rem;
+    min-height: 36px;
+    min-width: 36px;
   }
 .settings-button,
   .theme-dropdown button {
