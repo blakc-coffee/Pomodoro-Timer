@@ -2,9 +2,9 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { SettingsProvider } from './context/SettingsContext';
-import Navbar from './components/Navbar';
 import ModeSwitcher from './components/ModeSwitcher';
 import TimerDisplay from './components/TimerDisplay';
+import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
