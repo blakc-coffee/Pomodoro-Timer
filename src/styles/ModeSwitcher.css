@@ -34,6 +34,18 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 480px) {
+  .mode-switcher {
+    padding: 0.5rem;
+    margin: 0.75rem auto;
+    border-radius: 8px;
+  }
+  .mode-button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .mode-switcher {
     padding: 0.5rem;
