@@ -4,25 +4,42 @@ import 'react-circular-progressbar/dist/styles.css';
 import { FaRedo } from 'react-icons/fa';
 import { useTimer } from '../hooks/useTimer';
 import { useTheme } from '../context/ThemeContext';
+import { useSettings } from '../context/SettingsContext';
+import { useEffect } from 'react';
 import "../styles/TimerDisplay.css";
 
 const TimerDisplay = () => {
+  const { timerDuration, mode } = useSettings();
   const {
     timeLeft,
     isRunning,
     start,
     pause,
     reset,
-    formatTime
-  } = useTimer(25 * 60); // 25 minutes in seconds
+    formatTime,
+    setTime
+  } = useTimer(timerDuration);
+  
+  useEffect(() => {
+    // Update timer when settings change (only if not running)
+    if (!isRunning) {
+      setTime(timerDuration);
+    }
+  }, [timerDuration, isRunning, setTime]);
+
+  useEffect(() => {
+    // Reset timer when mode changes to new duration
+    reset(timerDuration);
+  }, [mode, timerDuration, reset]);
+
   const toggleTimer = () => {
     isRunning ? pause() : start();
   };
   const handleReset = () => {
-    reset(25 * 60); // Reset to 25 minutes
+    reset(timerDuration);
   };
   const { formatted: displayTime } = formatTime();
-  const percentage = (timeLeft / (25 * 60)) * 100;
+  const percentage = (timeLeft / timerDuration) * 100;
   const { theme } = useTheme();
   return (
     <div className='timer-container'>
