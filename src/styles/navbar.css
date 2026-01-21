@@ -217,6 +217,9 @@
 }
 /*Mobile Media Changes*/
 @media (max-width: 480px) {
+  .theme-name {
+  color: var(--quaternary);
+}
   .navbar {
     padding: 0.5rem 0;
   }
