@@ -1,8 +1,9 @@
 .mode-switcher {
   width: 100%;
-  max-width: 568px;
-  margin: 1rem auto 1rem auto;
+  max-width: 100%;
+  margin: 1rem 0 1rem 0;
   padding: 0.5rem 1rem;
+  box-sizing: border-box;
   display: flex;
   gap: 0.5rem;
   border-radius: 10px;
@@ -19,6 +20,9 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: capitalize;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mode-button:hover {
