@@ -1,3 +1,12 @@
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
 #root {
   max-width: 600px;
   margin: 0 auto;
@@ -26,6 +35,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    overflow: hidden;
   }
  .CircularProgressbar {
     width: 100% !important;
@@ -33,12 +43,18 @@
     height: auto !important;
     margin: 0 auto;
   }
+  .app {
+    padding: 0 0.5rem;
+    width: 100vw;
+    max-width: 100%;
+  }
 
   .timer-display {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 0.5rem 0;
+    overflow: hidden;
   }
   .timer-wrapper {
     transform: scale(0.9);
