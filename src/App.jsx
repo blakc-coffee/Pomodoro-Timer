@@ -2,7 +2,7 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { SettingsProvider } from './context/SettingsContext';
-import Navbar from './components/navbar';
+import Navbar from './components/Navbar';
 import ModeSwitcher from './components/ModeSwitcher';
 import TimerDisplay from './components/TimerDisplay';
 import './App.css';
