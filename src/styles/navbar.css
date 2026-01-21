@@ -10,8 +10,10 @@
   top: 0;
   z-index: 1000;
   border-radius: 10px;
-}
+  overflow: hidden;
+  box-sizing: border-box; 
 
+}
 .navbar-container {
   max-width: 600px;
   justify-content: space-between; 
@@ -20,8 +22,8 @@
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  overflow: hidden;
 }
-
 
 .theme-dropdown {
   position: relative;
@@ -219,11 +221,15 @@
     padding: 0.5rem 0;
   }
   .navbar-container {
-    padding: 0 0.75rem;
+    padding: 0 0.5rem;
     width: 100%;
   }
   .navbar-logo {
     font-size: 1.25rem;
+    max-width: 125px;
+     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   navbar-logo,
@@ -245,7 +251,7 @@
   }
   .theme-dropdown-menu {
     width: 200px;
-     right: 0.5rem !important;
+    right: 0.5rem !important;
     left: 0.5rem !important;
     width: auto !important;
     max-width: calc(100% - 1rem);
