@@ -29,6 +29,9 @@ html, body, #root {
     max-width: 100%;
     padding: 0.5rem;
   }
+  html, body, #root {
+    overflow: hidden;
+  }
   .timer-container {
     width: 100%;
     display: flex;
