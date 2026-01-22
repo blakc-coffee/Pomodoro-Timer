@@ -37,8 +37,9 @@
 @media (max-width: 480px) {
   .mode-switcher {
     padding: 0.5rem;
-    margin: 0.75rem auto;
+    margin: 1rem auto;
     border-radius: 8px;
+    max-width: 95%;
   }
   .mode-button {
     font-size: 0.8rem;

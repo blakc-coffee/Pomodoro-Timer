@@ -222,6 +222,8 @@
 }
   .navbar {
     padding: 0.5rem 0;
+    width: 100%;
+    max-width: 95%;
   }
   .theme-dropdown {
     position: static; 
@@ -273,6 +275,7 @@
  
   .settings-button {
     padding: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   button {

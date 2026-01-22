@@ -8,15 +8,17 @@ export const useTimer = (initialTime) => {
 
   const start = useCallback(() => {
     if (!isRunning) {
-      setIsRunning(true);
+      setTimeLeft(initialTime);
+      setIsRunning(true);   
     }
-  }, [isRunning]);
+  }, [initialTime, isRunning]);
 
   const pause = useCallback(() => {
-    if (isRunning) {
-      setIsRunning(false);
-    }
-  }, [isRunning]);
+  if (isRunning) {
+    setIsRunning(false);
+
+  }
+}, [isRunning]); 
 
   const reset = useCallback((newTime = initialTime) => {
     setIsRunning(false);
@@ -38,7 +40,11 @@ export const useTimer = (initialTime) => {
       }, 1000);
     }
 
-    return () => clearInterval(timerRef.current);
+      return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
   }, [isRunning]);
 
  
