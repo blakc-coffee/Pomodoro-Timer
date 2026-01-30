@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-export const useTimer = (initialTime) => {
+export const useTimer = (initialTime ,onComplete) => {
   const [timeLeft, setTimeLeft] = useState(initialTime);
   const [isRunning, setIsRunning] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
@@ -37,6 +37,8 @@ useEffect(() => {
         timerRef.current = null;
         setIsRunning(false);
         setIsStarted(false);
+        onComplete();
+        setTimeout(() => setIsRunning(true), 100);
         return 0;
       }
       return prev - 1;
@@ -49,7 +51,7 @@ useEffect(() => {
       timerRef.current = null;
     }
   };
-}, [isRunning ]);
+}, [isRunning, onComplete]);
 
 
    const formatTime = useCallback((seconds) => {

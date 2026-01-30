@@ -8,7 +8,7 @@ import { useSettings } from '../context/SettingsContext';
 import { useEffect } from 'react';
 import "../styles/TimerDisplay.css";
 
-const TimerDisplay = () => {
+const TimerDisplay = ({ onComplete }) => {
   const { timerDuration, } = useSettings();
   const {
     timeLeft,
@@ -19,7 +19,7 @@ const TimerDisplay = () => {
     reset,
     formatTime,
     setTime
-  } = useTimer(timerDuration);
+  } = useTimer(timerDuration, onComplete);
   
   
   useEffect(() => {
