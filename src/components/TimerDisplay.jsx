@@ -9,10 +9,11 @@ import { useEffect } from 'react';
 import "../styles/TimerDisplay.css";
 
 const TimerDisplay = () => {
-  const { timerDuration, mode } = useSettings();
+  const { timerDuration, } = useSettings();
   const {
     timeLeft,
     isRunning,
+    isStarted,
     start,
     pause,
     reset,
@@ -20,17 +21,13 @@ const TimerDisplay = () => {
     setTime
   } = useTimer(timerDuration);
   
+  
   useEffect(() => {
-    // Update timer when settings change (only if not running)
-    if (!isRunning) {
+    
+    if (!isRunning && !isStarted) {
       setTime(timerDuration);
     }
-  }, [timerDuration, isRunning, setTime]);
-
-  useEffect(() => {
-    // Reset timer when mode changes to new duration
-    reset(timerDuration);
-  }, [mode, timerDuration, reset]);
+  }, [timerDuration, isRunning, setTime, isStarted]);
 
   const toggleTimer = () => {
     isRunning ? pause() : start();
@@ -58,7 +55,7 @@ const TimerDisplay = () => {
         /></div>
         <div className='buttons'>
           <button className='start-pause'onClick={toggleTimer}>
-            <span>{isRunning ? 'Pause' : 'Start'}</span>
+            <span>{ isRunning ? 'Pause' : 'Start'}</span>
           </button>
           <button className='reset' onClick={handleReset}><FaRedo /></button>
 

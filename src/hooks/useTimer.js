@@ -1,62 +1,68 @@
-
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 export const useTimer = (initialTime) => {
   const [timeLeft, setTimeLeft] = useState(initialTime);
   const [isRunning, setIsRunning] = useState(false);
+  const [isStarted, setIsStarted] = useState(false);
   const timerRef = useRef(null);
-
-  const start = useCallback(() => {
-    if (!isRunning) {
-      setTimeLeft(initialTime);
-      setIsRunning(true);   
-    }
-  }, [initialTime, isRunning]);
-
-  const pause = useCallback(() => {
-  if (isRunning) {
-    setIsRunning(false);
-
-  }
-}, [isRunning]); 
-
-  const reset = useCallback((newTime = initialTime) => {
-    setIsRunning(false);
-    setTimeLeft(newTime);
-  }, [initialTime]);
-
+  const initialTimeRef = useRef(initialTime);
 
   useEffect(() => {
-    if (isRunning) {
-      timerRef.current = setInterval(() => {
-        setTimeLeft(prevTime => {
-          if (prevTime <= 1) {
-            clearInterval(timerRef.current);
-            setIsRunning(false);
-            return 0;
-          }
-          return prevTime - 1;
-        });
-      }, 1000);
-    }
+    initialTimeRef.current = initialTime;
+  }, [initialTime]);
 
-      return () => {
-      if (timerRef.current) {
+  const start = useCallback(() => {
+    setIsRunning(true);
+    setIsStarted(true);
+  }, []);
+
+  const pause = useCallback(() => {
+    setIsRunning(false);  
+    
+  }, []);
+
+  const reset = useCallback((newTime) => {
+    setIsRunning(false);
+    setIsStarted(false);
+    setTimeLeft(newTime ?? initialTimeRef.current);
+  }, []);
+
+useEffect(() => {
+  if (!isRunning) return;
+
+  timerRef.current = setInterval(() => {
+    setTimeLeft(prev => {
+      if (prev <= 1) {
         clearInterval(timerRef.current);
+        timerRef.current = null;
+        setIsRunning(false);
+        setIsStarted(false);
+        return 0;
       }
-    };
-  }, [isRunning]);
+      return prev - 1;
+    });
+  }, 1000);
 
- 
-  const formatTime = useCallback((seconds = timeLeft) => {
-    const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
-    const secs = (seconds % 60).toString().padStart(2, '0');
+  return () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  };
+}, [isRunning ]);
+
+
+   const formatTime = useCallback((seconds) => {
+    const time = seconds !== undefined ? seconds : timeLeft;
+    const mins = Math.floor(time / 60).toString().padStart(2, '0');
+    const secs = (time % 60).toString().padStart(2, '0');
     return { mins, secs, formatted: `${mins}:${secs}` };
   }, [timeLeft]);
 
   return {
     timeLeft,
     isRunning,
+    isStarted ,
     start,
     pause,
     reset,
